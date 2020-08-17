@@ -1,0 +1,110 @@
+* { /* Select evrything - main page */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    font-family: sans-serif; /* Font for your liking */
+    justify-content: center; /* Center the game */
+    color: grey
+}
+
+.container {
+    background: orange; /* Picking Orange as background color */
+    margin: 45px;
+    padding: 45px; /* Margin and padding to lower the game from the top */
+    border-radius: 20px; /* Round the edges - looks better than a box */
+    /* width: 500px;
+    height: 500px; 
+    Testing preview only, let the children determine the container size */
+}
+
+.title {
+    text-align: center;
+}
+
+.title span {
+    color: whitesmoke;
+}
+
+.status-action {
+    display: flex; /* Place in same line */
+    margin-top: 15px;
+    font-size: 20px;
+    justify-content: space-around; /* Space between the two */
+    height: 30px;
+}
+
+.status span {
+    color: whitesmoke;
+}
+
+.reset {
+    cursor: pointer;
+}
+
+.reset:hover {
+    color: whitesmoke;
+}
+
+.game-grid {
+    background: #ee7600 ; /* Choose a different color for the Gap to be seen */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fr unit equally divides the available sapce into equal spaces */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.game-cell {
+    background: orange; /* Change background color to match container leaving the Gap visable */
+    cursor: pointer; /* Let the user know this is clickable */
+    display: flex;
+    justify-content: center; /* Center the X and O */
+    align-items: center; /* Center the X and O */
+    height: 200px;
+    width: 200px;
+}
+
+.x::after {
+    content: '×'; /* NOTE this is a SYMBOL */
+    color: black;
+    font-size: 200px;
+}
+
+.o::after {
+    content: '○'; /* NOTE this is a SYMBOL - causes some centering issues */
+    color: whitesmoke;
+    font-size: 225px;
+}
+
+.x,
+.o {
+    cursor: default;
+}
+
+.won::after { /* Highlight the winning symbols in green */
+    color: green;
+}
+
+@media only screen and (max-width: 1024px) { /* Screen responsivness (Tablet) */
+    .game-grid {
+        margin-top: 25px;
+        gap: 8px;
+    }
+
+    .game-cell {
+        height: 150px;
+        width: 150ox;
+    }
+
+    .x::after {
+        font-size: 150px;
+    }
+
+    .o::after {
+        font-size: 175px;
+    }
+}
