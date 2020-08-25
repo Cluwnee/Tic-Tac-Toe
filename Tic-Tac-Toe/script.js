@@ -97,6 +97,7 @@ const handleReset = () => {
         cellDiv.classList.remove('o');
         cellDiv.classList.remove('won');
     }
+    alert("shit game xD");
     gameIsOn = true; // Restart the game.
 };
 
